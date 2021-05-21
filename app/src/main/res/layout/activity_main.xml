@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.main.view.MainActivity"
+    android:background="@color/design_default_color_primary">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:background="@android:color/transparent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingStart="@dimen/margin_very_big"
+            android:paddingEnd="@dimen/margin_very_big"
+            android:text="@string/text_wlc"
+            android:textSize="@dimen/text_very_big"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:gravity="center" />
+    </FrameLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        app:shapeAppearanceOverlay="@style/ShapeAppearance.MaterialComponents.MaterialCardView.TopCornerRadius.Elevated"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.8">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:text="@string/text_enter_token"
+                android:textSize="@dimen/text_very_big"
+                android:textStyle="bold"
+                android:textAlignment="center"/>
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:layout_gravity="center_horizontal">
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin_big"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/btn_text_next"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.appcompat.widget.LinearLayoutCompat>

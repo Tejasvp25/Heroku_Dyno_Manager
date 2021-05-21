@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="margin_medium">15dp</dimen>
+    <dimen name="margin_big">20dp</dimen>
+    <dimen name="margin_very_big">30dp</dimen>
+
+    <dimen name="padding_small">@dimen/margin_small</dimen>
+    <dimen name="padding_medium">@dimen/margin_medium</dimen>
+    <dimen name="padding_big">@dimen/margin_big</dimen>
+    <dimen name="padding_very_big">@dimen/margin_very_big</dimen>
+
+    <dimen name="text_small">10sp</dimen>
+    <dimen name="text_medium">15sp</dimen>
+    <dimen name="text_big">20sp</dimen>
+    <dimen name="text_very_big">30sp</dimen>
+
+</resources>
