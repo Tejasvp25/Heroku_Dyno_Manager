@@ -12,6 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.HerokuDynoManager">
+        <activity android:name=".ui.main.view.SplashScreenActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.main.view.AppInfoActivity"
             android:parentActivityName=".ui.main.view.AppListActivity"
@@ -19,13 +26,8 @@
         <activity
             android:name=".ui.main.view.AppListActivity"
             android:theme="@style/Theme.HerokuDynoManager.ActionBar" />
-        <activity android:name=".ui.main.view.MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".ui.main.view.MainActivity"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

@@ -18,4 +18,5 @@
     <string name="str_api_key">Api Key</string>
     <string name="str_theme">Theme</string>
     <string name="str_update_api_key">Update Api Key</string>
+    <string name="str_unofficial">(Unofficial)</string>
 </resources>

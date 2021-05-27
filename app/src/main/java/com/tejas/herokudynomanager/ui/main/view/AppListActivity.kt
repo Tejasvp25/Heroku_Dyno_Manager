@@ -49,6 +49,7 @@ class AppListActivity : AppCompatActivity() {
     private fun setupObserver(){
         viewModel.apps.observe(this, Observer {
             when(it.status){
+
                 Status.SUCCESS ->
                     it.data?.let {
                         if(it.size > 0) {
@@ -64,7 +65,7 @@ class AppListActivity : AppCompatActivity() {
                     progress_bar_applist.visibility = View.GONE
                     img_error.visibility = View.VISIBLE
                     text_error_msg.visibility = View.VISIBLE
-                    text_error_msg.text = if(it.statusCode == 401 )"Unauthorized\nPlease Check Your Auth Token !" else "Unexpected Error Occurred"
+                    text_error_msg.text = "Check Internet Connection\nAnd\nAPI key"
                 }
                 Status.LOADING -> {
                     applist_recyclerview.visibility = View.GONE
