@@ -1,23 +1,35 @@
 package com.tejas.herokudynomanager.network.models
 
-data class App(val name: String? = "",
-               val id: String? = "")
+
+import com.google.gson.annotations.SerializedName
+import java.io.Serializable
 
 
-data class Dyno(val app: App?,
-                val attachUrl: String? = "",
-                val size: String? = "",
-                val updatedAt: String? = "",
+data class Dyno(@SerializedName("app")
+                val app: App?,
+                @SerializedName("size")
+                val size: String? ,
+                @SerializedName("updated_at")
+                val updatedAt: String? ,
+                @SerializedName("release")
                 val release: Release?,
-                val name: String? = "",
-                val createdAt: String? = "",
-                val id: String? = "",
-                val state: String? = "",
-                val type: String? = "",
-                val command: String? = "")
+                @SerializedName("name")
+                val name: String? ,
+                @SerializedName("created_at")
+                val createdAt: String? ,
+                @SerializedName("id")
+                val id: String? ,
+                @SerializedName("state")
+                val state: String? ,
+                @SerializedName("type")
+                val type: String? ,
+                @SerializedName("command")
+                val command: String? ):Serializable
 
 
-data class Release(val id: String? = "",
-                   val version: Int? = 0)
+data class Release(@SerializedName("id")
+                   val id: String? ,
+                   @SerializedName("version")
+                   val version: Int? ):Serializable
 
 

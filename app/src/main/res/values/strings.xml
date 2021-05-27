@@ -3,4 +3,19 @@
     <string name="text_enter_token">Please Enter You Heroku Token</string>
     <string name="text_wlc">Welcome To Heroku Dyno Manager</string>
     <string name="btn_text_next">Next</string>
+    <string name="str_dyno_status">Dyno Status</string>
+    <string name="str_dyno_command">Command</string>
+    <string name="str_dyno_type">Type</string>
+    <string name="str_dyno_quantity">Quantity</string>
+    <string name="str_dyno_size">Size</string>
+    <string name="str_created_at">Created At</string>
+    <string name="str_updated_at">Updated At</string>
+    <string name="str_dynos">Dynos</string>
+    <string name="str_dyno_info">Info</string>
+    <string name="str_dyno_state">Dyno State</string>
+    <string name="str_appname">Name</string>
+    <string name="str_maintainance_mode">Maintainance Mode</string>
+    <string name="str_api_key">Api Key</string>
+    <string name="str_theme">Theme</string>
+    <string name="str_update_api_key">Update Api Key</string>
 </resources>

@@ -1,16 +1,22 @@
 package com.tejas.herokudynomanager.di.module
 
+import android.content.Context
+import android.util.Log
 import com.tejas.herokudynomanager.BuildConfig
 import com.tejas.herokudynomanager.network.api.ApiHelper
 import com.tejas.herokudynomanager.network.api.ApiHelperImpl
 import com.tejas.herokudynomanager.network.api.HerokuApiService
+import com.tejas.herokudynomanager.network.repository.MainRepository
+import com.tejas.herokudynomanager.utils.DatastorePreference
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
+import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
@@ -24,11 +30,11 @@ class AppModule {
     @Provides
     @Singleton
     fun provideOkHttpClient() = if(BuildConfig.DEBUG){
-        val logginInterceptor = HttpLoggingInterceptor()
-        logginInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+        val loggingInterceptor = HttpLoggingInterceptor()
+        loggingInterceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
         OkHttpClient
             .Builder()
-            .addInterceptor(logginInterceptor)
+            .addInterceptor(loggingInterceptor)
             .addInterceptor(Interceptor {
                 chain ->
                 val builder = chain.request().newBuilder()
@@ -66,4 +72,11 @@ class AppModule {
             .client(okHttpClient)
             .build()
 
+    @Provides
+    @Singleton
+    fun provideDataStore(@ApplicationContext context: Context):DatastorePreference = DatastorePreference(context)
+
+    @Provides
+    @Singleton
+    fun provideRepository(apiHelper: ApiHelperImpl) = MainRepository(apiHelper)
 }
