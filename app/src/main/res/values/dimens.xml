@@ -15,4 +15,6 @@
     <dimen name="text_big">20sp</dimen>
     <dimen name="text_very_big">30sp</dimen>
 
+    <dimen name="default_card_elevation">10dp</dimen>
+
 </resources>
