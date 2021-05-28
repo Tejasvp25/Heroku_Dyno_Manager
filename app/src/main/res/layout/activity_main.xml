@@ -41,7 +41,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/margin_big"
-                android:text="@string/text_enter_token"
+                android:text="@string/text_enter_api_key"
                 android:textSize="@dimen/text_very_big"
                 android:textStyle="bold"
                 android:textAlignment="center"/>

@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Heroku Dyno Manager</string>
-    <string name="text_enter_token">Please Enter You Heroku Token</string>
+    <string name="text_enter_api_key">Please Enter You Heroku Api Key</string>
     <string name="text_wlc">Welcome To Heroku Dyno Manager</string>
     <string name="btn_text_next">Next</string>
     <string name="str_dyno_status">Dyno Status</string>
