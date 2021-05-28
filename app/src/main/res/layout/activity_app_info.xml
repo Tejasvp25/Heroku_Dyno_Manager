@@ -93,7 +93,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Owner"
+                    android:text="@string/str_owner"
                     android:textStyle="bold" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_owner"
@@ -116,7 +116,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Status"
+                    android:text="@string/str_status"
                     android:textStyle="bold" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_status"
@@ -140,7 +140,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Build Stack"
+                    android:text="@string/str_build_stack"
                     android:textStyle="bold" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_buildstack"
@@ -164,7 +164,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created At"
+                    android:text="@string/str_created_at"
                     android:textStyle="bold" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_createdat"
@@ -188,7 +188,7 @@
                 <com.google.android.material.textview.MaterialTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="App ID"
+                    android:text="@string/str_app_id"
                     android:textStyle="bold" />
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_appid"

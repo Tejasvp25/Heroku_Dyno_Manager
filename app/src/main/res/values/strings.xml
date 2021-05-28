@@ -14,9 +14,14 @@
     <string name="str_dyno_info">Info</string>
     <string name="str_dyno_state">Dyno State</string>
     <string name="str_appname">Name</string>
-    <string name="str_maintainance_mode">Maintainance Mode</string>
+    <string name="str_maintainance_mode">Maintenance Mode</string>
     <string name="str_api_key">Api Key</string>
     <string name="str_theme">Theme</string>
     <string name="str_update_api_key">Update Api Key</string>
     <string name="str_unofficial">(Unofficial)</string>
+    <string name="str_app_id">App ID</string>
+    <string name="str_build_stack">Build Stack</string>
+    <string name="str_status">Status</string>
+    <string name="str_owner">Owner</string>
+    <string name="str_web_url">Web URL</string>
 </resources>
