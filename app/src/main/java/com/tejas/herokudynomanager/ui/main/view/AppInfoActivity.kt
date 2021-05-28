@@ -1,5 +1,8 @@
 package com.tejas.herokudynomanager.ui.main.view
 
+import android.content.ClipData
+import android.content.ClipboardManager
+import android.content.Context
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,6 +31,7 @@ import kotlinx.coroutines.runBlocking
 class AppInfoActivity : AppCompatActivity() {
     private val TAG:String = this.javaClass.simpleName
     private lateinit var app:HerokuApp
+    private var clipboardManager: ClipboardManager? = null
 
     private val viewModel: AppInfoViewModel by viewModels<AppInfoViewModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -40,10 +44,16 @@ class AppInfoActivity : AppCompatActivity() {
         text_buildstack.text = app.buildStack?.name ?: ""
         text_createdat.text = app.createdAt
         text_maintainancemode.text = app.maintenance.toString()
+        text_app_url.text = app.webUrl
         setupObserver()
         supportActionBar?.let {
             it.title = app.name
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
     }
 
     private fun setupObserver(){
@@ -111,5 +121,10 @@ class AppInfoActivity : AppCompatActivity() {
         })
         viewModel.getDynoFormation(app.name ?: "")
         viewModel.getDynos(app.name ?: "")
+    }
+
+    fun copyAppUrl(view: View) {
+        val clipData = ClipData.newPlainText("App Web URL",app.webUrl)
+        clipboardManager?.setPrimaryClip(clipData)
     }
 }
