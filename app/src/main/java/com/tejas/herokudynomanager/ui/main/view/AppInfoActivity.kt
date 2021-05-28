@@ -9,6 +9,7 @@ import android.view.View
 import android.widget.CompoundButton
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import com.google.android.material.snackbar.Snackbar
 import com.tejas.herokudynomanager.R
 import com.tejas.herokudynomanager.network.models.DynoFormationUpdatePayload
 import com.tejas.herokudynomanager.network.models.HerokuApp
@@ -121,6 +122,11 @@ class AppInfoActivity : AppCompatActivity() {
 
     fun copyAppUrl(view: View) {
         val clipData = ClipData.newPlainText("App Web URL",app.webUrl)
-        clipboardManager?.setPrimaryClip(clipData)
+        clipboardManager?.let {
+            it.setPrimaryClip(clipData)
+            Snackbar.make(appinfo_nest_scroll_view,"Web URL copied to clipboard",Snackbar.LENGTH_SHORT).apply {
+                animationMode = Snackbar.ANIMATION_MODE_FADE
+            }.show()
+        }
     }
 }
