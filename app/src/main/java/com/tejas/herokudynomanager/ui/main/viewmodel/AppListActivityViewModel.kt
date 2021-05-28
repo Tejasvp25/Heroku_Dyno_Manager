@@ -2,14 +2,11 @@ package com.tejas.herokudynomanager.ui.main.viewmodel
 
 import androidx.lifecycle.*
 import com.tejas.herokudynomanager.network.models.HerokuApp
-
 import com.tejas.herokudynomanager.network.repository.MainRepository
-import com.tejas.herokudynomanager.utils.DatastorePreference
 import com.tejas.herokudynomanager.utils.Resource
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import retrofit2.Response
 import java.lang.Exception
 import javax.inject.Inject
 

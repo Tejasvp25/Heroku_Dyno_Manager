@@ -3,10 +3,8 @@ package com.tejas.herokudynomanager.ui.main.view
 import android.content.ClipData
 import android.content.ClipboardManager
 import android.content.Context
-import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.widget.CompoundButton
 import androidx.activity.viewModels
@@ -24,8 +22,6 @@ import kotlinx.android.synthetic.main.listitem_dyno_state.view.*
 import kotlinx.android.synthetic.main.listitem_dyno_switch.view.*
 import kotlinx.android.synthetic.main.listitem_dyno_switch.view.switch_dyno
 import kotlinx.android.synthetic.main.listitem_dyno_switch.view.text_dyno_type
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.runBlocking
 
 @AndroidEntryPoint
 class AppInfoActivity : AppCompatActivity() {

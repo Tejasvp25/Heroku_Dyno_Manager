@@ -5,11 +5,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.activity.viewModels
 import androidx.lifecycle.asLiveData
-import androidx.lifecycle.withCreated
 import com.tejas.herokudynomanager.R
-import com.tejas.herokudynomanager.ui.main.viewmodel.AppListActivityViewModel
 import com.tejas.herokudynomanager.utils.DatastorePreference
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_main.*
