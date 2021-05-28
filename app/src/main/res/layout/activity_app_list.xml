@@ -15,7 +15,8 @@
 
         <androidx.core.widget.ContentLoadingProgressBar
             android:id="@+id/progress_bar_applist"
-            style="@style/Widget.AppCompat.ProgressBar"
+            style="?attr/progressBarStyle"
+            android:theme="@style/Widget.AppCompat.ProgressBar.PrimaryColorVarient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:visibility="visible"/>

@@ -28,4 +28,7 @@
         <item name="cornerSizeBottomRight">0dp</item>
         <item name="cardElevation">10dp</item>
     </style>
+    <style name="Widget.AppCompat.ProgressBar.PrimaryColorVarient" parent="Widget.AppCompat.ProgressBar">
+        <item name="colorAccent">@color/design_default_color_primary_variant</item>
+    </style>
 </resources>
