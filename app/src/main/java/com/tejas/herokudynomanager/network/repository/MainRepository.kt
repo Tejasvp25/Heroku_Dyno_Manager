@@ -19,4 +19,5 @@ class MainRepository @Inject constructor(private val apiHelper: ApiHelper) {
                                              ,updatePayload: DynoFormationUpdatePayload
     ): Response<List<DynoFormation>>
             = apiHelper.updateDynoFormation(authToken,appName,updatePayload)
+    suspend fun getLog(url: String) = apiHelper.getLog(url)
 }

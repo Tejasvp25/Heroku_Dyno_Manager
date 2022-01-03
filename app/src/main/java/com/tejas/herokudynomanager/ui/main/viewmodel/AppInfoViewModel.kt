@@ -1,5 +1,6 @@
 package com.tejas.herokudynomanager.ui.main.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.*
 import com.tejas.herokudynomanager.network.models.Dyno
 import com.tejas.herokudynomanager.network.models.DynoFormation
@@ -10,7 +11,17 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import okhttp3.ResponseBody
+import java.io.ByteArrayOutputStream
+import java.io.InputStream
+import java.nio.charset.StandardCharsets
 import javax.inject.Inject
+import android.R.attr.process
+import java.io.BufferedReader
+import java.io.InputStreamReader
+import java.net.URL
+import java.net.URLConnection
+
 
 @HiltViewModel
 class AppInfoViewModel @Inject constructor(handle: SavedStateHandle, val mainRepository: MainRepository): ViewModel() {
@@ -26,6 +37,10 @@ class AppInfoViewModel @Inject constructor(handle: SavedStateHandle, val mainRep
     private val _dynos = MutableLiveData<Resource<List<Dyno>?>>()
     val dynos: MutableLiveData<Resource<List<Dyno>?>>
         get() = _dynos
+
+    private val _log = MutableLiveData<Resource<ResponseBody?>>()
+    val log: MutableLiveData<Resource<ResponseBody?>>
+        get() = _log
 
 
     fun getDynoFormation(appName:String,delay:Boolean = false) = viewModelScope.launch(Dispatchers.IO) {
@@ -68,6 +83,16 @@ class AppInfoViewModel @Inject constructor(handle: SavedStateHandle, val mainRep
                 emit(Resource.error(data = null,message = res.message() ?: "Error Occured",statusCode = res.code()))
         }catch (exception:Exception){
             emit(Resource.error(data = null,message = exception.localizedMessage ?: "Error Occured",statusCode = 500))
+        }
+    }
+
+    fun getLogs(url: String) = viewModelScope.launch(Dispatchers.IO) {
+        try {
+            val res = mainRepository.getLog(url)
+            _log.postValue(Resource.success(res.body()))
+        }catch (exception:Exception){
+            _log.postValue(Resource.error(data = null,message = exception.localizedMessage ?: "Error Occured",statusCode = 500))
+            exception.printStackTrace()
         }
     }
 
