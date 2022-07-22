@@ -82,7 +82,7 @@ class AppListActivity : AppCompatActivity() {
         })
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val menuInflator = menuInflater
         menuInflator.inflate(R.menu.menu_applist_activity,menu)
         return super.onCreateOptionsMenu(menu)
